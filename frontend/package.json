@@ -13,6 +13,9 @@
     "type": "git",
     "url": "git+https://github.com/creativetimofficial/ct-material-kit-react.git"
   },
+  "plugins": [
+    ["@babel/plugin-proposal-private-property-in-object", { "loose": true }]
+]
   "dependencies": {
     "@emotion/cache": "11.10.7",
     "@emotion/react": "11.10.6",
@@ -57,7 +60,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint .",
-    "lint:fix": "eslint --fix .",
     "prettify": "prettier --write .",
     "dev": "vite --host 0.0.0.0",
     "css": "npx tailwindcss -i ./src/index.css -o ./src/output.css --watch",
@@ -67,7 +69,8 @@
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
+      "react-app/jest",
+      "@babel/plugin-transform-private-property-in-object", "next/core-web-vitals"
     ]
   },
   "browserslist": {
@@ -98,9 +101,13 @@
     "vite": "^5.1.6",
     "vite-plugin-pwa": "^0.16.4",
     "jest": "^29.3.1",
-    "@babel/plugin-proposal-private-property-in-object": "^7.16.5",
     "@babel/plugin-proposal-*": "^7.16.5",
     "nodemon": "^2.0.20"
+    "@babel/core": "7.22.5",
+    "@babel/eslint-parser": "7.22.5",
+    "@babel/plugin-proposal-private-property-in-object": "^7.23.4,
+    "@babel/preset-env": "7.22.5",
+}
   },
   "resolutions": {
     "ansi-regex": "5.0.1"
