@@ -2,19 +2,19 @@
 FROM node:lts AS development
 
 # Set working directory
-WORKDIR /src
+WORKDIR /app
 
 # Copy package.json and package-lock.json
-COPY package*.json ./
+COPY package.json yarn.lock ./
 
 # Install dependencies
-RUN npm install
+RUN yarn install --production
 
 # Copy the rest of the application code
-COPY . ./
+COPY . .
 
 # Expose the port the app runs on (default is 5173 for React)
-EXPOSE 5173
+EXPOSE 3000
 
 # Command to start the development server
-CMD ["npm", "run", "dev"]
+CMD ["node","src/index.js"]
