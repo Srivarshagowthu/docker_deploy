@@ -1,6 +1,6 @@
 # Ignore node_modules directory
 node_modules
-
+Dockerfile
 # Ignore any npm-debug.log file
 npm-debug.log
 
